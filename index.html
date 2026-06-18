@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bird Healthcare | Specialist Psychiatry Services</title>
+<meta name="description" content="Bird Healthcare provides specialist clinical services in mental health, neurodevelopmental assessment and addiction psychiatry, including treatment planning and clinical reports.">
+<style>
+  :root {
+    --ink: #0F1B2D;
+    --ink-soft: rgba(15, 27, 45, 0.66);
+    --teal: #2A9D8F;
+    --teal-deep: #1F7268;
+    --amber: #D98E4A;
+    --paper: #FBF7F0;
+    --tint: #E8EFE9;
+    --card: #FFFFFF;
+    --rule: rgba(15, 27, 45, 0.14);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Sans Pro', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.65;
+    font-size: 17px;
+  }
+
+  a { color: var(--teal-deep); }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* Header */
+  header.site {
+    padding: 30px 0 0;
+  }
+
+  .brand-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .brand-row .name {
+    font-family: 'Georgia', 'Iowan Old Style', serif;
+    font-size: 20px;
+    letter-spacing: 0.01em;
+  }
+
+  .brand-row .tag {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* Hero */
+  .hero {
+    padding: 70px 0 10px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 40px;
+    align-items: end;
+  }
+
+  .hero-strap {
+    color: var(--teal-deep);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: 'Georgia', 'Iowan Old Style', serif;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 1.18;
+    letter-spacing: 0.002em;
+    color: var(--ink);
+  }
+
+  .hero-aside {
+    border-left: 2px solid var(--teal);
+    padding-left: 22px;
+  }
+
+  .hero-aside p {
+    color: var(--ink-soft);
+    font-size: 16px;
+  }
+
+  .pulse-line {
+    width: 100%;
+    margin: 46px 0 0;
+    display: block;
+  }
+
+  .pulse-line path {
+    stroke: var(--teal);
+    stroke-width: 2.5;
+    fill: none;
+  }
+
+  .pulse-line circle {
+    fill: var(--amber);
+  }
+
+  /* Section shell */
+  section {
+    padding: 56px 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  section.tinted {
+    background: var(--tint);
+    border-top: none;
+  }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 32px;
+    margin-bottom: 8px;
+  }
+
+  .section-label {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+    font-weight: 700;
+    padding-top: 4px;
+  }
+
+  h2 {
+    font-family: 'Georgia', 'Iowan Old Style', serif;
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .section-body {
+    max-width: 640px;
+  }
+
+  .section-body p {
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+
+  /* Services list */
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 36px;
+    margin-top: 28px;
+  }
+
+  .service {
+    border-top: 2px solid var(--amber);
+    padding-top: 16px;
+  }
+
+  .service h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .service p {
+    color: var(--ink-soft);
+    font-size: 16px;
+  }
+
+  /* Who we support */
+  .support-list {
+    list-style: none;
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 36px;
+  }
+
+  .support-list li {
+    padding-left: 20px;
+    position: relative;
+    color: var(--ink-soft);
+  }
+
+  .support-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+  }
+
+  /* Contact */
+  .contact-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .contact-body p {
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+
+  a.email {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--ink);
+    border-bottom: 2px solid var(--amber);
+    padding-bottom: 2px;
+  }
+
+  a.email:hover,
+  a.email:focus-visible {
+    color: var(--teal-deep);
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 30px 0 44px;
+  }
+
+  footer .pulse-line {
+    margin-bottom: 22px;
+    opacity: 0.5;
+  }
+
+  footer p {
+    color: var(--ink-soft);
+    font-size: 13px;
+    max-width: 600px;
+  }
+
+  footer .company-line {
+    margin-top: 6px;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--teal-deep);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+
+  @media (max-width: 720px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 24px; }
+    .hero-aside { border-left: none; border-top: 2px solid var(--teal); padding-left: 0; padding-top: 16px; }
+    h1 { font-size: 32px; }
+    .section-head { grid-template-columns: 1fr; gap: 6px; }
+    .service-grid { grid-template-columns: 1fr; }
+    .support-list { grid-template-columns: 1fr; }
+    .contact-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="site">
+    <div class="wrap brand-row">
+      <span class="name">Bird Healthcare</span>
+      <span class="tag">Specialist Psychiatry</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-strap">Specialist Psychiatry Services</div>
+          <h1>Clear minds need clear answers.</h1>
+        </div>
+        <div class="hero-aside">
+          <p>
+            Bird Healthcare provides specialist clinical services for people
+            seeking clear assessment, diagnosis, treatment planning and
+            written clinical reports.
+          </p>
+        </div>
+      </div>
+
+      <svg class="pulse-line" viewBox="0 0 880 60" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,30 C120,30 140,10 200,10 C260,10 270,50 330,50 C390,50 400,18 460,18 C520,18 530,42 590,42 C650,42 660,30 880,30" />
+        <circle cx="200" cy="10" r="4" />
+        <circle cx="460" cy="18" r="4" />
+      </svg>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-label">Clinical services</div>
+        <div>
+          <h2>What we do</h2>
+          <div class="section-body">
+            <p>
+              Our work includes mental health assessments, neurodevelopmental
+              assessments, addiction psychiatry, treatment recommendations,
+              medication reviews where clinically appropriate, and reports
+              for individuals, families, employers, insurers, legal
+              representatives and professional bodies.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-grid">
+        <div class="service">
+          <h3>Mental health assessments</h3>
+          <p>Comprehensive psychiatric assessment for a wide range of mental health concerns, including diagnostic review, formulation, treatment planning and recommendations for ongoing care.</p>
+        </div>
+        <div class="service">
+          <h3>Neurodevelopmental assessments</h3>
+          <p>Assessment for neurodevelopmental conditions, including attention deficit hyperactivity disorder and autism spectrum disorder, with clear written outcomes and practical recommendations.</p>
+        </div>
+        <div class="service">
+          <h3>Addiction psychiatry</h3>
+          <p>Specialist assessment and treatment planning for alcohol, substance use and behavioural addiction concerns, with a focus on risk, recovery, relapse prevention and wider mental health needs.</p>
+        </div>
+        <div class="service">
+          <h3>Treatment and care planning</h3>
+          <p>Clinical treatment recommendations, medication review where appropriate, liaison with other professionals and practical guidance for next steps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tinted" id="who">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-label">Who we support</div>
+        <div>
+          <h2>Adults, young people, families and organisations</h2>
+          <div class="section-body">
+            <p>
+              Bird Healthcare supports adults, young people, families and
+              organisations who need specialist psychiatric input, clear
+              clinical judgement and practical written guidance.
+            </p>
+          </div>
+        </div>
+      </div>
+      <ul class="support-list">
+        <li>Private psychiatric assessments</li>
+        <li>Second opinions</li>
+        <li>Occupational reports</li>
+        <li>Medico legal reports</li>
+        <li>Diagnostic clarification</li>
+        <li>Treatment planning</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="reports">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-label">Reports and documentation</div>
+        <div>
+          <h2>Clear, structured reports</h2>
+          <div class="section-body">
+            <p>
+              We provide clear, structured reports for private individuals,
+              families, employers, insurers, legal representatives and other
+              professional bodies.
+            </p>
+            <p>
+              Every assessment is designed to understand the whole person,
+              not just a presenting symptom. Our aim is to provide practical
+              answers, safe recommendations and clear documentation that can
+              be understood by patients, families and professionals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tinted" id="contact">
+    <div class="wrap">
+      <div class="contact-row">
+        <div class="section-label">Contact</div>
+        <div class="contact-body">
+          <p>For enquiries, appointments or report requests, please contact</p>
+          <a class="email" href="mailto:info@birdhealthcare.co.uk">info@birdhealthcare.co.uk</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <svg class="pulse-line" viewBox="0 0 880 40" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,20 C150,20 160,5 230,5 C300,5 310,35 380,35 C450,35 460,12 540,12 C610,12 620,28 880,28" />
+      </svg>
+      <p>Bird Healthcare Ltd. Specialist medical practice activities and other human health activities.</p>
+      <p class="company-line">
+        Registered office: 128 City Road, London, United Kingdom, EC1V 2NX.
+        Registered in England and Wales. Company number to follow on completion of incorporation.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
